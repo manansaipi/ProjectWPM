@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ProjectWPM</string>
+    <string name="nameEditText">Name :</string>
+    <string name="submitButton">Submit</string>
+    <string name="submitTextView">Hello %1$s</string>
+    <string-array name="names">
+        <item>Abdul</item>
+        <item>Mannan</item>
+        <item>Saipi</item>
+    </string-array>
 </resources>
