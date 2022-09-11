@@ -30,17 +30,25 @@ class MainActivity : AppCompatActivity() {
 
          submitButton.setOnClickListener {
 
-             Log.d("PZN", "this is debug log")
-             Log.i("PZN", "this is info log")
-             Log.w("PZN", "this is warning log")
-             Log.e("PZN", "this is error log")
+             Log.d("PZN", "debuh")
+             Log.i("ValueResource",resources.getInteger(R.integer.maxPage).toString())
+
+             submitButton.setBackgroundColor(resources.getColor(R.color.background, theme))
 
             val name = nameEditText.text.toString()
-            submitTextView.text = resources.getString(R.string.submitTextView, name)
+             Log.i("PZN", "info")
+             Log.i("ValueResource",resources.getBoolean(R.bool.isProductionMode).toString())
+
+             submitTextView.text = resources.getString(R.string.submitTextView, name)
+             Log.w("PZN", "warning")
+             Log.i("ValueResource",resources.getIntArray(R.array.number).joinToString(","))
 
              resources.getStringArray(R.array.names).forEach {
                  Log.i("PZN", it)
              }
-        }
+             Log.e("PZN", "error")
+             Log.i("ValueResource",resources.getColor(R.color.background, theme).toString())
+
+         }
     }
 }
