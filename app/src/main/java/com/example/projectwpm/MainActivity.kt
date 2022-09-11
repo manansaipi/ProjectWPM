@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
          submitButton.setOnClickListener {
 
+//             resources.getDrawable((R.drawable.pzn), theme)
+
              Log.d("PZN", "debuh")
              Log.i("ValueResource",resources.getInteger(R.integer.maxPage).toString())
 
