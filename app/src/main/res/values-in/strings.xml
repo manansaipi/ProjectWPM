@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProjectWPM</string>
+    <string name="nameEditText">Nama :</string>
+    <string name="submitButton">Kirimkan</string>
+    <string name="submitTextView">Halo %1$s</string>
+
+</resources>

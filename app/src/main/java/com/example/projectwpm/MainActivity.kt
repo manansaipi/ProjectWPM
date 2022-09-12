@@ -1,5 +1,7 @@
 package com.example.projectwpm
 
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +22,21 @@ class MainActivity : AppCompatActivity() {
         submitTextView = findViewById(R.id.submitTextView)
     }
 
+    private fun checkFingerPrint(){
+        if(packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)){
+            Log.i("FEATURE","Available")
+        }else{
+            Log.w("FEATURE","Not Available")
+        }
+    }
+
+    private fun checkPlatformVersion(){
+        Log.i("SDK", Build.VERSION.SDK_INT.toString())
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.S)
+            Log.i("SDK", "Not Available Feauture bcs SDK feature is lower than 31")
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.new_layout)
@@ -29,6 +46,19 @@ class MainActivity : AppCompatActivity() {
         submitTextView.text = resources.getString(R.string.app_name)
 
          submitButton.setOnClickListener {
+
+             checkFingerPrint()
+             checkPlatformVersion()
+             val sample = resources.openRawResource(R.raw.sample)
+                 .bufferedReader()
+                 .use { it.readText() }
+             Log.i("RAW", sample)
+
+             val json = assets.open("sample.json")
+                 .bufferedReader()
+                 .use { it.readText() }
+
+             Log.i("ASSET", json)
 
 //             resources.getDrawable((R.drawable.pzn), theme)
 
